@@ -1,0 +1,11 @@
+2026-08-30T09:00:12Z INFO postgres-db: checkpoint complete
+2026-08-30T09:08:47Z INFO postgres-db: autovacuum: table "orders" processed
+2026-08-30T09:14:03Z WARN postgres-db: connection slots almost exhausted: 95/100 in use
+2026-08-30T09:14:41Z ERROR postgres-db: FATAL: remaining connection slots are reserved for non-replication superuser connections
+2026-08-30T09:15:22Z ERROR postgres-db: FATAL: sorry, too many clients already
+2026-08-30T09:16:05Z ERROR postgres-db: FATAL: sorry, too many clients already
+2026-08-30T09:18:30Z WARN postgres-db: connection slots almost exhausted: 99/100 in use
+2026-08-30T09:24:10Z INFO postgres-db: connection count returning to normal: 41/100 in use
+2026-08-30T09:26:00Z INFO postgres-db: connection count normal: 22/100 in use
+2026-09-01T03:40:00Z INFO postgres-db: checkpoint complete
+2026-09-01T04:12:00Z INFO postgres-db: checkpoint complete

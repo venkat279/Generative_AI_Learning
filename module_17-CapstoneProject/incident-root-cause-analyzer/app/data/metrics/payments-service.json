@@ -1,0 +1,9 @@
+[
+  {"timestamp": "2026-08-30T09:00:00Z", "error_rate_pct": 0.2, "p99_latency_ms": 180, "cpu_pct": 30},
+  {"timestamp": "2026-08-30T09:16:00Z", "error_rate_pct": 64.0, "p99_latency_ms": 5000, "cpu_pct": 35},
+  {"timestamp": "2026-08-30T09:20:00Z", "error_rate_pct": 71.5, "p99_latency_ms": 5000, "cpu_pct": 33},
+  {"timestamp": "2026-08-30T09:26:00Z", "error_rate_pct": 1.1, "p99_latency_ms": 190, "cpu_pct": 29},
+  {"timestamp": "2026-09-01T03:45:00Z", "error_rate_pct": 0.2, "p99_latency_ms": 190, "cpu_pct": 26},
+  {"timestamp": "2026-09-01T03:52:00Z", "error_rate_pct": 58.0, "p99_latency_ms": 10000, "cpu_pct": 89},
+  {"timestamp": "2026-09-01T04:05:00Z", "error_rate_pct": 0.5, "p99_latency_ms": 220, "cpu_pct": 30}
+]

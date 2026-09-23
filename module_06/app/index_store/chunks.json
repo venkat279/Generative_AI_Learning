@@ -1,0 +1,122 @@
+[
+  {
+    "id": "coding_standards.md::0",
+    "text": "# Coding Standards Every pull request needs at least one approval before merging, and CI\nmust be green - no merging with failing tests or linter errors, even for\n\"trivial\" changes. Keep pull requests small and focused on one change. A PR that mixes a\nrefactor with a behavior change is harder to review and harder to revert\nsafely if something breaks; split them into separate PRs when possible.",
+    "source": "coding_standards.md",
+    "chunk_index": 0
+  },
+  {
+    "id": "coding_standards.md::1",
+    "text": "omething breaks; split them into separate PRs when possible. Write tests for new behavior, not just for bug fixes. A change without\ntest coverage is treated as incomplete during review, and reviewers are\nexpected to ask for tests rather than approve without them. Commit messages should explain *why* a change was made, not just what\nchanged - the diff already shows what changed. Avoid vague messages like\n\"fix bug\" or \"update code\" with no further context.",
+    "source": "coding_standards.md",
+    "chunk_index": 1
+  },
+  {
+    "id": "coding_standards.md::2",
+    "text": "ges like\n\"fix bug\" or \"update code\" with no further context. Don't introduce a new third-party dependency without a short note in the\nPR description explaining why an existing library couldn't do the job.",
+    "source": "coding_standards.md",
+    "chunk_index": 2
+  },
+  {
+    "id": "deployment_process.md::0",
+    "text": "# Deployment Process All services deploy through the shared CI/CD pipeline. A deployment\nbegins when a pull request merges into `main`; the pipeline then runs the\nfull test suite, builds a container image, and pushes it to the internal\nregistry.",
+    "source": "deployment_process.md",
+    "chunk_index": 0
+  },
+  {
+    "id": "deployment_process.md::1",
+    "text": "s a container image, and pushes it to the internal\nregistry. Deployments to staging happen automatically on every merge. Deployments\nto production require a manual approval step from a second engineer and\nare limited to weekdays between 9am and 4pm, so someone is available to\nrespond if something goes wrong.",
+    "source": "deployment_process.md",
+    "chunk_index": 1
+  },
+  {
+    "id": "deployment_process.md::2",
+    "text": "so someone is available to\nrespond if something goes wrong. Every production deployment must include a rollback plan in the PR\ndescription. Rolling back is done by re-deploying the previous container\nimage tag through the same pipeline - it takes about three minutes and\ndoes not require a new build.",
+    "source": "deployment_process.md",
+    "chunk_index": 2
+  },
+  {
+    "id": "deployment_process.md::3",
+    "text": "takes about three minutes and\ndoes not require a new build. Feature flags should be used for any change that alters user-facing\nbehavior, so a bad deploy can be mitigated by disabling the flag instead\nof rolling back the whole release.",
+    "source": "deployment_process.md",
+    "chunk_index": 3
+  },
+  {
+    "id": "incident_response.md::0",
+    "text": "# Incident Response Runbook If you notice a production outage or major degradation, declare an\nincident immediately rather than trying to fix it quietly first. Post in\nthe `#incidents` channel with a one-line summary, the affected service,\nand your best guess at severity (SEV1 = full outage, SEV2 = partial\ndegradation, SEV3 = minor/cosmetic).",
+    "source": "incident_response.md",
+    "chunk_index": 0
+  },
+  {
+    "id": "incident_response.md::1",
+    "text": "outage, SEV2 = partial\ndegradation, SEV3 = minor/cosmetic). The first responder becomes the incident commander until someone else\nexplicitly takes over. The incident commander's job is coordination, not\nnecessarily fixing the bug themselves: pull in the right people, keep the\nincident channel updated every 15 minutes, and decide when to escalate.",
+    "source": "incident_response.md",
+    "chunk_index": 1
+  },
+  {
+    "id": "incident_response.md::2",
+    "text": "annel updated every 15 minutes, and decide when to escalate. Mitigate before you diagnose. If rolling back the last deploy or\ndisabling a feature flag would likely stop the bleeding, do that first\nand investigate the root cause afterward. Every SEV1 or SEV2 incident needs a written postmortem within two\nbusiness days. Postmortems are blameless - the goal is fixing the system,\nnot finding who to blame.",
+    "source": "incident_response.md",
+    "chunk_index": 2
+  },
+  {
+    "id": "onboarding_checklist.md::0",
+    "text": "# Engineering Onboarding Checklist Before your first day, IT should have provisioned your laptop and sent an\ninvite to the internal Slack workspace. If either is missing, contact\nthe helpdesk before you start.",
+    "source": "onboarding_checklist.md",
+    "chunk_index": 0
+  },
+  {
+    "id": "onboarding_checklist.md::1",
+    "text": "If either is missing, contact\nthe helpdesk before you start. On day one: get access to the main GitHub organization, request VPN\ncredentials, and clone the `platform` repository. Run the `./setup.sh`\nscript in that repo - it installs the required language runtimes, sets\nup pre-commit hooks, and configures your local environment file from the\nshared template.",
+    "source": "onboarding_checklist.md",
+    "chunk_index": 1
+  },
+  {
+    "id": "onboarding_checklist.md::2",
+    "text": "igures your local environment file from the\nshared template. By the end of week one, you should have shipped a small change through\nthe full deployment process (see the deployment process document) with a\nbuddy reviewing your PR, so you experience the pipeline end to end while\nsomeone experienced is watching.",
+    "source": "onboarding_checklist.md",
+    "chunk_index": 2
+  },
+  {
+    "id": "onboarding_checklist.md::3",
+    "text": "e pipeline end to end while\nsomeone experienced is watching. By the end of week two, you should be added to the on-call rotation as a\nshadow (see the on-call rotation document) for one rotation before taking\na primary shift yourself.",
+    "source": "onboarding_checklist.md",
+    "chunk_index": 3
+  },
+  {
+    "id": "oncall_rotation.md::0",
+    "text": "# On-Call Rotation The on-call rotation runs weekly, Monday to Monday, and covers all\nproduction services owned by the team. The current schedule is managed\nin the on-call tool - check there, not the wiki, since the wiki version\ngoes stale.",
+    "source": "oncall_rotation.md",
+    "chunk_index": 0
+  },
+  {
+    "id": "oncall_rotation.md::1",
+    "text": "heck there, not the wiki, since the wiki version\ngoes stale. Every new engineer shadows one full rotation before taking a primary\non-call shift, so they see what a normal week looks like alongside\nsomeone experienced before being paged themselves. If you're paged, acknowledge within 5 minutes. If the issue is a SEV1 or\nSEV2, follow the incident response runbook rather than trying to fix it\nsolo and quietly.",
+    "source": "oncall_rotation.md",
+    "chunk_index": 1
+  },
+  {
+    "id": "oncall_rotation.md::2",
+    "text": "ponse runbook rather than trying to fix it\nsolo and quietly. You can swap on-call shifts with a teammate as long as it's reflected in\nthe on-call tool before the shift starts - informal swaps that aren't\nrecorded there cause pages to go to the wrong person. Compensation for on-call weeks follows the standard company on-call pay\npolicy documented in the HR portal, not in this engineering wiki.",
+    "source": "oncall_rotation.md",
+    "chunk_index": 2
+  },
+  {
+    "id": "security_policy.pdf::0",
+    "text": "Security Policy All production credentials are stored in the secrets manager, never in code or config files committed to version control. Every employee laptop must have full-disk encryption enabled and a screen lock timeout of five minutes or less. Access to the production database requires two-factor authentication and is granted only",
+    "source": "security_policy.pdf",
+    "chunk_index": 0
+  },
+  {
+    "id": "security_policy.pdf::1",
+    "text": "abase requires two-factor authentication and is granted only through the standard access-request process, reviewed by the security team. Report any suspected security incident immediately to the on-call security contact. Do not wait for the next standup. Third-party dependencies are scanned automatically on every pull request; a flagged high- severity vulnerability blocks merge until resolved or explicitly waived by a lead.",
+    "source": "security_policy.pdf",
+    "chunk_index": 1
+  },
+  {
+    "id": "security_policy.pdf::2",
+    "text": "blocks merge until resolved or explicitly waived by a lead. API keys are rotated every ninety days and immediately upon suspected compromise.",
+    "source": "security_policy.pdf",
+    "chunk_index": 2
+  }
+]

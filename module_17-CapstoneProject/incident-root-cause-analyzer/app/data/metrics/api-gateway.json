@@ -1,0 +1,7 @@
+[
+  {"timestamp": "2026-08-30T09:00:00Z", "error_rate_pct": 0.1, "p99_latency_ms": 90, "cpu_pct": 20},
+  {"timestamp": "2026-08-30T09:19:00Z", "error_rate_pct": 62.0, "p99_latency_ms": 5100, "cpu_pct": 26},
+  {"timestamp": "2026-08-30T09:25:00Z", "error_rate_pct": 2.0, "p99_latency_ms": 110, "cpu_pct": 19},
+  {"timestamp": "2026-09-01T03:55:00Z", "error_rate_pct": 78.0, "p99_latency_ms": 10200, "cpu_pct": 31},
+  {"timestamp": "2026-09-01T04:06:00Z", "error_rate_pct": 1.0, "p99_latency_ms": 230, "cpu_pct": 20}
+]

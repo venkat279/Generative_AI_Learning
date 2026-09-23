@@ -1,0 +1,16 @@
+2026-08-30T09:00:05Z INFO payments-service: deploy v2.14.0 rolled out to 3/3 instances
+2026-08-30T09:14:50Z ERROR payments-service: db query failed: could not acquire connection from pool (timeout after 5000ms)
+2026-08-30T09:15:12Z ERROR payments-service: db query failed: could not acquire connection from pool (timeout after 5000ms)
+2026-08-30T09:15:47Z ERROR payments-service: charge_card failed for order #48213: connection pool exhausted
+2026-08-30T09:16:30Z ERROR payments-service: charge_card failed for order #48219: connection pool exhausted
+2026-08-30T09:17:02Z ERROR payments-service: connection pool stats: 50/50 checked out, 0 idle, 38 waiting
+2026-08-30T09:19:15Z ERROR payments-service: charge_card failed for order #48227: connection pool exhausted
+2026-08-30T09:24:33Z INFO payments-service: connection pool stats: 12/50 checked out, 38 idle, 0 waiting
+2026-08-30T09:26:10Z INFO payments-service: charge_card succeeded for order #48231
+2026-09-01T03:47:11Z ERROR payments-service: external payment gateway request timed out after 10000ms (order #58890)
+2026-09-01T03:48:02Z ERROR payments-service: external payment gateway request timed out after 10000ms (order #58891)
+2026-09-01T03:49:40Z ERROR payments-service: external payment gateway request timed out after 10000ms (order #58894)
+2026-09-01T03:52:18Z ERROR payments-service: thread pool exhausted waiting on external payment gateway: 100/100 threads busy
+2026-09-01T03:58:00Z ERROR payments-service: external payment gateway request timed out after 10000ms (order #58901)
+2026-09-01T04:03:44Z INFO payments-service: external payment gateway latency recovering: 620ms
+2026-09-01T04:05:10Z INFO payments-service: external payment gateway latency normal: 210ms

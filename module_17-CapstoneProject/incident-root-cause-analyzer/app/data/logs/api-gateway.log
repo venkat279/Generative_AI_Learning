@@ -1,0 +1,11 @@
+2026-08-30T09:00:00Z INFO api-gateway: routing table refreshed
+2026-08-30T09:17:20Z ERROR api-gateway: 502 Bad Gateway on POST /checkout (upstream: payments-service)
+2026-08-30T09:17:55Z ERROR api-gateway: 502 Bad Gateway on POST /checkout (upstream: payments-service)
+2026-08-30T09:18:40Z ERROR api-gateway: 502 Bad Gateway on POST /checkout (upstream: payments-service)
+2026-08-30T09:19:30Z WARN api-gateway: error rate on /checkout: 62% over last 60s
+2026-08-30T09:25:00Z INFO api-gateway: error rate on /checkout: 2% over last 60s
+2026-09-01T03:50:05Z ERROR api-gateway: 504 Gateway Timeout on POST /checkout (upstream: payments-service)
+2026-09-01T03:51:47Z ERROR api-gateway: 504 Gateway Timeout on POST /checkout (upstream: payments-service)
+2026-09-01T03:53:12Z ERROR api-gateway: 500 Internal Server Error on POST /checkout: thread pool exhausted
+2026-09-01T03:55:00Z WARN api-gateway: error rate on /checkout: 78% over last 60s
+2026-09-01T04:06:00Z INFO api-gateway: error rate on /checkout: 1% over last 60s
